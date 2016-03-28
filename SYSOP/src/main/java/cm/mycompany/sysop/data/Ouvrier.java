@@ -13,6 +13,6 @@ import javax.persistence.Entity;
  * @author doumtsop
  */
 @Entity
-public class Ouvrier extends Personne implements Serializable{
+public class Ouvrier extends Personne{
        
 }

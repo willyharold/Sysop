@@ -5,6 +5,7 @@
  */
 package cm.mycompany.sysop.data;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +18,18 @@ import javax.persistence.InheritanceType;
  * @author harold
  */
 @Entity
-public class Rendement {
+public class Rendement implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    
 }
