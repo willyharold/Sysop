@@ -5,7 +5,9 @@
  */
 package cm.mycompany.sysop.data;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -13,5 +15,17 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Comptabiliseur extends Personne{
+    
+    @OneToMany(mappedBy = "comptabiliseur")
+    private List<Evaluation> listesEvaluations;
+
+    public List<Evaluation> getListesEvaluations() {
+        return listesEvaluations;
+    }
+
+    public void setListesEvaluations(List<Evaluation> listesEvaluations) {
+        this.listesEvaluations = listesEvaluations;
+    }
+    
     
 }

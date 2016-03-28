@@ -5,7 +5,9 @@
  */
 package cm.mycompany.sysop.data;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -14,4 +16,6 @@ import javax.persistence.Entity;
 @Entity
 public class Idealiste extends Personne{
     
+    @OneToMany(mappedBy = "idealiste")
+    private List<Suggestion> listSugestions;
 }

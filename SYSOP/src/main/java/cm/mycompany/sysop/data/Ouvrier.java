@@ -7,6 +7,8 @@ package cm.mycompany.sysop.data;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -14,5 +16,21 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Ouvrier extends Personne{
+    
+    @ManyToOne
+    private Evaluation evaluation;
+    
+    @ManyToMany
+    private Entreprise entreprise;
+
+    public Evaluation getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(Evaluation evaluation) {
+        this.evaluation = evaluation;
+    }
+    
+    
        
 }
