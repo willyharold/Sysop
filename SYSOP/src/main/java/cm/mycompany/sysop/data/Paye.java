@@ -6,12 +6,14 @@
 package cm.mycompany.sysop.data;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -23,6 +25,18 @@ public class Paye implements Serializable{
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
+    
+    @OneToMany(mappedBy = "paye")
+    private List<Paye> payes;
+
+    public List<Paye> getPayes() {
+        return payes;
+    }
+
+    public void setPayes(List<Paye> payes) {
+        this.payes = payes;
+    }
+    
     public Long getId() {
         return id;
     }
