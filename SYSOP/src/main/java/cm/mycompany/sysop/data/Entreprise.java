@@ -34,7 +34,7 @@ public class Entreprise implements Serializable{
     private List<Tache> listesTaches;
     
     @ManyToMany(mappedBy = "entreprise")
-    private Ouvrier ouvrier;
+    private List<Ouvrier> ouvriers;
 
     @ManyToMany(mappedBy = "entreprise")
     private List<ClasseOuvrier> classeOuvrier;
@@ -71,13 +71,13 @@ public class Entreprise implements Serializable{
         this.listesTaches = listesTaches;
     }
 
-    public Ouvrier getOuvrier() {
-        return ouvrier;
+    public List<Ouvrier> getOuvriers() {
+        return ouvriers;
     }
 
-    public void setOuvrier(Ouvrier ouvrier) {
-        this.ouvrier = ouvrier;
+    public void setOuvriers(List<Ouvrier> ouvriers) {
+        this.ouvriers = ouvriers;
     }
-    
-    
+
+   
 }
