@@ -47,6 +47,9 @@ public class Entreprise implements Serializable{
         this.classeOuvrier = classeOuvrier;
     }
     
+    
+    
+    
     public Long getId() {
         return id;
     }
