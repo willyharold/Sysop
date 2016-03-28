@@ -14,11 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
-<<<<<<< HEAD
 import javax.persistence.OneToMany;
 import org.hibernate.annotations.ManyToAny;
-=======
->>>>>>> 5eb6f998b6efa0962992a3521cb54dc96b206182
 
 /**
  *
@@ -30,7 +27,6 @@ public class Entreprise implements Serializable{
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
-<<<<<<< HEAD
     @OneToMany(mappedBy = "entreprise")
     private List<Suggestion> listessuggetions;
     
@@ -39,8 +35,7 @@ public class Entreprise implements Serializable{
     
     @ManyToMany(mappedBy = "entreprise")
     private Ouvrier ouvrier;
-=======
-    
+
     @ManyToMany(mappedBy = "entreprise")
     private List<ClasseOuvrier> classeOuvrier;
 
@@ -51,7 +46,6 @@ public class Entreprise implements Serializable{
     public void setClasseOuvrier(List<ClasseOuvrier> classeOuvrier) {
         this.classeOuvrier = classeOuvrier;
     }
->>>>>>> 5eb6f998b6efa0962992a3521cb54dc96b206182
     
     public Long getId() {
         return id;
