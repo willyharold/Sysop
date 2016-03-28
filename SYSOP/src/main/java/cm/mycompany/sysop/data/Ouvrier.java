@@ -22,7 +22,7 @@ public class Ouvrier extends Personne{
     private Evaluation evaluation;
     
     @ManyToMany
-    private List<Entreprise> entreprises;
+    private List<Entreprise> entreprise;
 
     public Evaluation getEvaluation() {
         return evaluation;
@@ -30,6 +30,14 @@ public class Ouvrier extends Personne{
 
     public void setEvaluation(Evaluation evaluation) {
         this.evaluation = evaluation;
+    }
+
+    public List<Entreprise> getEntreprise() {
+        return entreprise;
+    }
+
+    public void setEntreprise(List<Entreprise> entreprise) {
+        this.entreprise = entreprise;
     }
     
     

@@ -27,15 +27,17 @@ public class Paye implements Serializable{
 
     
     @OneToMany(mappedBy = "paye")
-    private List<Paye> payes;
+    private List<ClasseOuvrier> listesClasseOuvriers;
 
-    public List<Paye> getPayes() {
-        return payes;
+    public List<ClasseOuvrier> getListesClasseOuvriers() {
+        return listesClasseOuvriers;
     }
 
-    public void setPayes(List<Paye> payes) {
-        this.payes = payes;
+    public void setListesClasseOuvriers(List<ClasseOuvrier> listesClasseOuvriers) {
+        this.listesClasseOuvriers = listesClasseOuvriers;
     }
+
+    
     
     public Long getId() {
         return id;

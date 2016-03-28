@@ -30,7 +30,7 @@ public class ClasseOuvrier {
 
     
     @ManyToMany
-    private List<Entreprise> entreprises;
+    private List<Entreprise> entreprise;
 
     
     @ManyToOne
@@ -43,16 +43,15 @@ public class ClasseOuvrier {
     public void setPaye(Paye paye) {
         this.paye = paye;
     }
-    
-    
-    public List<Entreprise> getEntreprises() {
-        return entreprises;
+
+    public List<Entreprise> getEntreprise() {
+        return entreprise;
     }
 
-    public void setEntreprises(List<Entreprise> entreprises) {
-        this.entreprises = entreprises;
+    public void setEntreprise(List<Entreprise> entreprise) {
+        this.entreprise = entreprise;
     }
-            
+     
             
     public Rendement getRendement() {
         return rendement;
