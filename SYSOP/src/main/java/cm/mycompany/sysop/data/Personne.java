@@ -5,6 +5,7 @@
  */
 package cm.mycompany.sysop.data;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ import javax.persistence.InheritanceType;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Personne {
+public class Personne implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
