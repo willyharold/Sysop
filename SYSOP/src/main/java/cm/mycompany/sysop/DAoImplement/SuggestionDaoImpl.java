@@ -5,8 +5,8 @@
  */
 package cm.mycompany.sysop.DAoImplement;
 
-import cm.mycompany.sysop.Dao.Interface.IClasseOuvrierDao;
-import cm.mycompany.sysop.data.ClasseOuvrier;
+import cm.mycompany.sysop.Dao.Interface.ISuggestionDao;
+import cm.mycompany.sysop.data.Suggestion;
 import com.douwe.generic.dao.impl.GenericDao;
 import java.io.Serializable;
 
@@ -14,6 +14,6 @@ import java.io.Serializable;
  *
  * @author doumtsop
  */
-public class ClasseOuvrierDaoImpl extends GenericDao<ClasseOuvrier, Long> implements IClasseOuvrierDao{
+public class SuggestionDaoImpl extends GenericDao<Suggestion, Long> implements ISuggestionDao{
     
 }

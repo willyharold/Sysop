@@ -5,7 +5,7 @@
  */
 package cm.mycompany.sysop.Dao.Interface;
 
-import cm.mycompany.sysop.data.ClasseOuvrier;
+import cm.mycompany.sysop.data.Tache;
 import com.douwe.generic.dao.IDao;
 import java.io.Serializable;
 
@@ -13,6 +13,6 @@ import java.io.Serializable;
  *
  * @author doumtsop
  */
-public interface IClasseOuvrierDao extends IDao<ClasseOuvrier, Long>{
+public interface ITacheDao extends IDao<Tache, Long>{
     
 }

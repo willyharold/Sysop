@@ -5,15 +5,16 @@
  */
 package cm.mycompany.sysop.DAoImplement;
 
-import cm.mycompany.sysop.Dao.Interface.IClasseOuvrierDao;
-import cm.mycompany.sysop.data.ClasseOuvrier;
+import cm.mycompany.sysop.Dao.Interface.IComptabiliseurDao;
+import cm.mycompany.sysop.data.Comptabiliseur;
 import com.douwe.generic.dao.impl.GenericDao;
 import java.io.Serializable;
+import org.hibernate.validator.jtype.Generic;
 
 /**
  *
  * @author doumtsop
  */
-public class ClasseOuvrierDaoImpl extends GenericDao<ClasseOuvrier, Long> implements IClasseOuvrierDao{
+public class ComptabiliseurDaoImpl extends GenericDao<Comptabiliseur, Long> implements IComptabiliseurDao{
     
 }
