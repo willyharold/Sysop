@@ -33,17 +33,10 @@ public class Entreprise implements Serializable{
     @OneToMany(mappedBy = "entreprise")
     private List<Tache> listesTaches;
     
-    @ManyToMany(mappedBy = "entreprise")
-<<<<<<< HEAD
-    private Ouvrier ouvrier;
-<<<<<<< HEAD
-    
-=======
-=======
+    @ManyToMany(mappedBy = "entreprise")   
     private List<Ouvrier> ouvriers;
->>>>>>> e1462d7ba2055f4fe3a429c27fe9e9ea31fe04a1
 
->>>>>>> be1eb7338f0465ee825b0c7d2bb62e72d45a7be8
+
     @ManyToMany(mappedBy = "entreprise")
     private List<ClasseOuvrier> classeOuvrier;
 
