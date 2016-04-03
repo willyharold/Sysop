@@ -21,7 +21,7 @@ import javax.persistence.Persistence;
  */
 public class test {
     public static void main(String[] args) throws DataAccessException {
-         EntityManagerFactory emf = Persistence.createEntityManagerFactory("sysopPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("sysopPU");
         EntityManager em = emf.createEntityManager();
         IOuvrierDao iOuvrierDao = new OuvrierDaoImpl();
         ((GenericDao) iOuvrierDao).setManager(em);
@@ -33,8 +33,8 @@ public class test {
         
         Ouvrier ouvrier = new Ouvrier();
         ouvrier.setAge(12);
-        ouvrier.setNom("mokai");
-        ouvrier.setPrenom("pros");
+        ouvrier.setNom("Achilo");
+        ouvrier.setPrenom("t");
         iOuvrierDao.create(ouvrier);
         
         tx.commit();
