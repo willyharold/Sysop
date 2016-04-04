@@ -33,8 +33,8 @@ public class test {
         
         Ouvrier ouvrier = new Ouvrier();
         ouvrier.setAge(12);
-        ouvrier.setNom("mokai");
-        ouvrier.setPrenom("pros");
+        ouvrier.setNom("Achilo");
+        ouvrier.setPrenom("t");
         iOuvrierDao.create(ouvrier);
         
         tx.commit();
