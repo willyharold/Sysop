@@ -20,4 +20,5 @@ public interface IEvaluationService {
     public Evaluation updateEvaluation(Evaluation evaluation) throws ServiceException;
     public Evaluation findEvaluationById(Long id) throws ServiceException;
     public List<Evaluation> findAllEvaluation() throws ServiceException;
+    public void deleteEvaluation(Long id) throws ServiceException;
 }

@@ -21,5 +21,5 @@ public interface ICLasseOuvrierService {
     public ClasseOuvrier updateClasseOuvrier(ClasseOuvrier classeOuvrier) throws ServiceException;
     public ClasseOuvrier findClasseOuvrierById(Long id) throws ServiceException;
     public List<ClasseOuvrier> findAllClasseOuvrier() throws ServiceException;
-    
+    public void deleteClasseOuvrier(Long id) throws ServiceException;
 }

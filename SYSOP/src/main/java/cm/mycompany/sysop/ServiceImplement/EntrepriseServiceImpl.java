@@ -65,5 +65,13 @@ public class EntrepriseServiceImpl implements IEntrepriseService{
             throw new ServiceException("erreur de creation");
         }
     }
+
+    public void deleteEntreprise(Long id) throws ServiceException {
+        try {
+            entrepriseDao.delete(entrepriseDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(EntrepriseServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ }
     
 }

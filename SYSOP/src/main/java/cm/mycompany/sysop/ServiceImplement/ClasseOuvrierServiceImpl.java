@@ -62,5 +62,13 @@ public class ClasseOuvrierServiceImpl implements ICLasseOuvrierService{
             throw new ServiceException("erreur de creation");
         }
     }
+
+    public void deleteClasseOuvrier(Long id) throws ServiceException {
+        try {
+            classeOuvrierDao.delete(classeOuvrierDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(ClasseOuvrierServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }
