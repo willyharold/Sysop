@@ -20,9 +20,29 @@
     <bean id="ITacheDao" class="cm.mycompany.sysop.DAoImplement.TacheDaoImpl"/>  
     
 <!-- la couche servcie-->
-    
+    <bean id="ICLasseOuvrierService" class="cm.mycompany.sysop.ServiceImplement.ClasseOuvrierServiceImpl">
+        <property name="classeOuvrierDao" ref="IClasseOuvrierDao"/>
+    </bean>
+    <bean id="IComptabilisateurService" class="cm.mycompany.sysop.ServiceImplement.ComptablisateurServiceImpl">
+        <property name="iEvaluationDao" ref="IEvaluationDao"/>
+    </bean>
+    <bean id="IEntrepriseService" class="cm.mycompany.sysop.ServiceImplement.EntrepriseServiceImpl">
+        <property name="entrepriseDao" ref="IEntrepriseDao"/>
+    </bean>
     <bean id="IEvaluationService" class="cm.mycompany.sysop.ServiceImplement.EvaluationServiceImpl">
         <property name="iEvaluationDao" ref="IEvaluationDao"/>
+    </bean>
+    <bean id="IIdealisteService" class="cm.mycompany.sysop.ServiceImplement.IdealisteServiceImpl">
+        <property name="iIdealisteDao" ref="IIdealisteDao"/>
+    </bean>
+    <bean id="IOuvrierService" class="cm.mycompany.sysop.ServiceImplement.OuvrierServiceImpl">
+        <property name="iOuvrierDao" ref="IOuvrierDao"/>
+    </bean>
+    <bean id="ISuggestionService" class="cm.mycompany.sysop.ServiceImplement.SuggestionServiceImpl">
+        <property name="iSuggestionDao" ref="ISuggestionDao"/>
+    </bean>
+    <bean id="ITacheService" class="cm.mycompany.sysop.ServiceImplement.TacheServiceImpl">
+        <property name="iTacheDao" ref="ITacheDao"/>
     </bean>
     
      

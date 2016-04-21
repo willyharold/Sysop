@@ -14,8 +14,9 @@ import org.hibernate.service.spi.ServiceException;
  *
  * @author harold
  */
-public class ComptablisateurServiceImpl implements IComptabilisateurService{
 
+public class ComptablisateurServiceImpl implements IComptabilisateurService{
+    
     public Comptabiliseur createComptabiliseur(Comptabiliseur comptabiliseur) throws ServiceException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
