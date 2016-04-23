@@ -23,9 +23,7 @@
     <bean id="ICLasseOuvrierService" class="cm.mycompany.sysop.ServiceImplement.ClasseOuvrierServiceImpl">
         <property name="classeOuvrierDao" ref="IClasseOuvrierDao"/>
     </bean>
-    <bean id="IComptabilisateurService" class="cm.mycompany.sysop.ServiceImplement.ComptablisateurServiceImpl">
-        <property name="iEvaluationDao" ref="IEvaluationDao"/>
-    </bean>
+    
     <bean id="IEntrepriseService" class="cm.mycompany.sysop.ServiceImplement.EntrepriseServiceImpl">
         <property name="entrepriseDao" ref="IEntrepriseDao"/>
     </bean>

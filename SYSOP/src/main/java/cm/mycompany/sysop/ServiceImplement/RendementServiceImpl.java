@@ -5,9 +5,13 @@
  */
 package cm.mycompany.sysop.ServiceImplement;
 
+import cm.mycompany.sysop.Dao.Interface.IRendementDao;
 import cm.mycompany.sysop.ServiceInterface.IRendementService;
 import cm.mycompany.sysop.data.Rendement;
+import com.douwe.generic.dao.DataAccessException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.hibernate.service.spi.ServiceException;
 
 /**
@@ -16,20 +20,59 @@ import org.hibernate.service.spi.ServiceException;
  */
 public class RendementServiceImpl implements IRendementService{
 
+    private IRendementDao rendementDao;
+
+    public IRendementDao getRendementDao() {
+        return rendementDao;
+    }
+
+    public void setRendementDao(IRendementDao rendementDao) {
+        this.rendementDao = rendementDao;
+    }
+    
+    
     public Rendement createRendement(Rendement rendement) throws ServiceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return rendementDao.create(rendement);
+        } catch (DataAccessException ex) {
+            Logger.getLogger(RendementServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ServiceException("erreur de creation");
+        }
     }
 
     public Rendement updateRendement(Rendement rendement) throws ServiceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return rendementDao.update(rendement);
+        } catch (DataAccessException ex) {
+            Logger.getLogger(RendementServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ServiceException("erreur de creation");
+        }
     }
 
     public Rendement findRendementById(Long id) throws ServiceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return rendementDao.findById(id);
+        } catch (DataAccessException ex) {
+            Logger.getLogger(RendementServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ServiceException("erreur de creation");
+        }
     }
 
     public List<Rendement> findAllRendement() throws ServiceException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            return rendementDao.findAll();
+        } catch (DataAccessException ex) {
+            Logger.getLogger(RendementServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ServiceException("erreur de creation");
+        }
     }
+
+    public void deleteRendement(Long id) throws ServiceException {
+        try {
+            rendementDao.delete(rendementDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(RendementServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ }
     
 }

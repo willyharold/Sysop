@@ -21,5 +21,6 @@ public interface IComptabilisateurService {
     public Comptabiliseur updateComptabiliseur(Comptabiliseur comptabiliseur) throws ServiceException;
     public Comptabiliseur findComptabiliseurById(Long id) throws ServiceException;
     public List<Comptabiliseur> findAllComptabiliseur() throws ServiceException;
-    
+    public void deleteComptabilisateur(Long id) throws ServiceException;
+
 }

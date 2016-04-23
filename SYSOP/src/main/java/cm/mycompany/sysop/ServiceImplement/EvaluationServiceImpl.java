@@ -73,5 +73,13 @@ public class EvaluationServiceImpl implements IEvaluationService{
             throw new ServiceException("erreur de creation");
         }
     }
+
+    public void deleteEvaluation(Long id) throws ServiceException {
+        try {
+            iEvaluationDao.delete(iEvaluationDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(EvaluationServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ }
     
 }
