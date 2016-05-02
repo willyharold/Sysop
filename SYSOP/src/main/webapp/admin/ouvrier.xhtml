@@ -1,15 +1,54 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
-                template="/WEB-INF/template_admin.xhtml">
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/WEB-INF/template_admin.xhtml"
+                >
 
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
 
-        <h3 class="hardblue TexAlCenter">Empty Page</h3>
-        <span class="TexAlCenter DispBlock Wid100">Use this page to start from scratch and place your custom content.</span>
+        <f:view>
+
+
+            <h:form>
+
+                <p:dataTable value="#{ouvrierBean.findAllOuvrier()}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Evaluation"/>
+                        </f:facet>
+                        <h:outputText value="#{item.evaluation}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nom"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nom}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Prenom"/>
+                        </f:facet>
+                        <h:outputText value="#{item.prenom}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Age"/>
+                        </f:facet>
+                        <h:outputText value="#{item.age}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+
     </ui:define>
 
 </ui:composition>

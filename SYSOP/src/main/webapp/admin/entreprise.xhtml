@@ -8,8 +8,31 @@
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
 
-        <h3 class="hardblue TexAlCenter">Empty Page</h3>
-        <span class="TexAlCenter DispBlock Wid100">Use this page to start from scratch and place your custom content.</span>
+        <f:view>
+
+
+            <h:form>
+
+                <p:dataTable value="#{entrepriseBean.findAllEntreprise()}" var="item">
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Code"/>
+                        </f:facet>
+                        <h:outputText value="#{item.code}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Intitule"/>
+                        </f:facet>
+                        <h:outputText value="#{item.intitule}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+
+        
+
     </ui:define>
 
 </ui:composition>

@@ -7,6 +7,7 @@ package cm.mycompany.sysop.data;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,12 @@ public class Entreprise implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
+    
+    @Column
+    private String Code;
+    
+    @Column
+    private String Intitule;
 
     @OneToMany(mappedBy = "entreprise")
     private List<Suggestion> listessuggetions;
@@ -56,6 +63,23 @@ public class Entreprise implements Serializable{
         this.id = id;
     }
 
+    public String getCode() {
+        return Code;
+    }
+
+    public void setCode(String Code) {
+        this.Code = Code;
+    }
+
+    public String getIntitule() {
+        return Intitule;
+    }
+
+    public void setIntitule(String Intitule) {
+        this.Intitule = Intitule;
+    }
+
+    
     public List<Suggestion> getListessuggetions() {
         return listessuggetions;
     }

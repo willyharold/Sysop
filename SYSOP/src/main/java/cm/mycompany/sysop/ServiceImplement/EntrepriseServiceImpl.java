@@ -13,11 +13,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.hibernate.service.spi.ServiceException;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author harold
  */
+@Transactional
 public class EntrepriseServiceImpl implements IEntrepriseService{
 
     private IEntrepriseDao entrepriseDao;
