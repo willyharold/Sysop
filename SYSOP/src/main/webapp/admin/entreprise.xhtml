@@ -7,32 +7,44 @@
 
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
-        <f:view>
-                <h:form>
-                <h1><h:outputText value="List"/></h1>
-                <p:dataTable value="#{entrepriseBean.entreprises}" var="item">
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="#{item.id}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Code"/>
-                        </f:facet>
-                        <h:outputText value="#{item.code}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Intitule"/>
-                        </f:facet>
-                        <h:outputText value="#{item.intitule}"/>
-                    </p:column>
-                </p:dataTable>
-            </h:form>
-        </f:view>
-
+        <div class="Container100">
+            <div class="ContainerIndent">
+                <p:panel>
+                    <span class="FontBold Fs18 hardblue Container100">Entreprise</span>
+                    <div class="Container100">
+                        <div class="ContainerIndent">
+                            <h:form id="form">
+                                <p:dataTable value="#{entrepriseBean.entreprises}" var="item" rows="10" paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                                 rowsPerPageTemplate="5,10,15" emptyMessage="No cars found with given criteria" reflow="true">
+                                    <f:facet name="header">
+                                            Entreprise
+                                        </f:facet>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Id"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Code"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.code}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Intitule"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.intitule}"/>
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                 </p:panel>
+                <div class="EmptyBox20"></div>
+            </div>
+        </div>
     </ui:define>
 
 
