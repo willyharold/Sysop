@@ -13,6 +13,8 @@ import cm.mycompany.sysop.data.Entreprise;
 import cm.mycompany.sysop.data.Ouvrier;
 import com.douwe.generic.dao.DataAccessException;
 import com.douwe.generic.dao.impl.GenericDao;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -35,10 +37,12 @@ public class test {
 //        iOuvrierService.createOuvrier(ouvrier);
 
         IEntrepriseService entrepriseService = (IEntrepriseService)ctx.getBean("IEntrepriseService");
-        Entreprise entreprise = new Entreprise();
-        entreprise.setCode("1234");
-        entreprise.setIntitule("REFERENCE");
-        entrepriseService.createEntreprise(entreprise);
-
+//        Entreprise entreprise = new Entreprise();
+//        entreprise.setCode("1234");
+//        entreprise.setIntitule("REFERENCE");
+//        entrepriseService.createEntreprise(entreprise);
+        List<Entreprise> entreprises = new LinkedList<Entreprise>();
+        entreprises = entrepriseService.findAllEntreprise();
+        System.out.println(entreprises);
     }
 }

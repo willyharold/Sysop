@@ -104,5 +104,11 @@ public class Entreprise implements Serializable{
         this.ouvriers = ouvriers;
     }
 
+    @Override
+    public String toString() {
+        return "Entreprise{" + "id=" + id + ", Code=" + Code + ", Intitule=" + Intitule +'}';
+    }
+    
+    
    
 }

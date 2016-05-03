@@ -6,6 +6,7 @@
 package cm.mycompany.sysop.Service.Interface;
 
 import cm.mycompany.sysop.data.Entreprise;
+import com.douwe.generic.dao.DataAccessException;
 import java.util.List;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.transaction.annotation.Transactional;

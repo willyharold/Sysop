@@ -59,7 +59,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService{
         }
     }
 
-    public List<Entreprise> findAllEntreprise() throws ServiceException {
+    public List<Entreprise> findAllEntreprise() throws ServiceException{
         try {
             return entrepriseDao.findAll();
         } catch (DataAccessException ex) {

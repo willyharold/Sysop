@@ -7,14 +7,16 @@
 
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
-
         <f:view>
-
-
-            <h:form>
-
-                <p:dataTable value="#{entrepriseBean.findAllEntreprise()}" var="item">
-                    
+                <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <p:dataTable value="#{entrepriseBean.entreprises}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Id"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </p:column>
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Code"/>
@@ -31,8 +33,8 @@
             </h:form>
         </f:view>
 
-        
-
     </ui:define>
+
+
 
 </ui:composition>
