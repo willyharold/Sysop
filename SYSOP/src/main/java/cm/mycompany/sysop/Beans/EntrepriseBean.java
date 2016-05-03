@@ -38,13 +38,13 @@ public class EntrepriseBean {
     public List<Entreprise> getEntreprises() {   
 
         try {
-            entreprises = iEntrepriseService.findAllEntreprise(); // il y'a un problème a ce niveau. Il genere un nullpointerException
+            entreprises = iEntrepriseService.findAllEntreprise();
         } catch (Exception e) {
             System.out.println(e);
         }
 
         System.out.println(entreprises);
-        return null;
+        return entreprises;
     }
 
     public void setEntreprises(List<Entreprise> entreprises) {
