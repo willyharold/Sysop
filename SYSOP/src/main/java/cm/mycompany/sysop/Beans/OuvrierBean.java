@@ -5,7 +5,7 @@
  */
 package cm.mycompany.sysop.Beans;
 
-import cm.mycompany.sysop.ServiceInterface.IOuvrierService;
+import cm.mycompany.sysop.Service.Interface.IOuvrierService;
 import cm.mycompany.sysop.data.Ouvrier;
 import java.util.List;
 import javax.faces.bean.ManagedBean;

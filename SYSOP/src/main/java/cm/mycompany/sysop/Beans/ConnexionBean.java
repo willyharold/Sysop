@@ -5,10 +5,15 @@
  */
 package cm.mycompany.sysop.Beans;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
 /**
  *
  * @author harold
  */
+@ManagedBean
+@RequestScoped
 public class ConnexionBean {
     
 }

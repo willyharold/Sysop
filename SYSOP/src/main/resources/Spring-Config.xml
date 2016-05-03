@@ -8,38 +8,38 @@
 ">
     
 <!-- la couche dao  -->
-    <bean id="IClasseOuvrierDao" class="cm.mycompany.sysop.DAoImplement.ClasseOuvrierDaoImpl"/>
-    <bean id="IComptabiliseurDao" class="cm.mycompany.sysop.DAoImplement.ComptabiliseurDaoImpl"/>
-    <bean id="IEntrepriseDao" class="cm.mycompany.sysop.DAoImplement.EntrepriseDaoImpl"/>
-    <bean id="IEvaluationDao" class="cm.mycompany.sysop.DAoImplement.EvaluationDaoImpl"/>
-    <bean id="IIdealisteDao" class="cm.mycompany.sysop.DAoImplement.IdealisteDaoImpl"/>
-    <bean id="IOuvrierDao" class="cm.mycompany.sysop.DAoImplement.OuvrierDaoImpl"/>
-    <bean id="IPayeDao" class="cm.mycompany.sysop.DAoImplement.PayeDaoImpl"/>
-    <bean id="IRendementDao" class="cm.mycompany.sysop.DAoImplement.RendementDaoImpl"/>
-    <bean id="ISuggestionDao" class="cm.mycompany.sysop.DAoImplement.SuggestionDaoImpl"/>
-    <bean id="ITacheDao" class="cm.mycompany.sysop.DAoImplement.TacheDaoImpl"/>  
+    <bean id="IClasseOuvrierDao" class="cm.mycompany.sysop.DAo.Implement.ClasseOuvrierDaoImpl"/>
+    <bean id="IComptabiliseurDao" class="cm.mycompany.sysop.DAo.Implement.ComptabiliseurDaoImpl"/>
+    <bean id="IEntrepriseDao" class="cm.mycompany.sysop.DAo.Implement.EntrepriseDaoImpl"/>
+    <bean id="IEvaluationDao" class="cm.mycompany.sysop.DAo.Implement.EvaluationDaoImpl"/>
+    <bean id="IIdealisteDao" class="cm.mycompany.sysop.DAo.Implement.IdealisteDaoImpl"/>
+    <bean id="IOuvrierDao" class="cm.mycompany.sysop.DAo.Implement.OuvrierDaoImpl"/>
+    <bean id="IPayeDao" class="cm.mycompany.sysop.DAo.Implement.PayeDaoImpl"/>
+    <bean id="IRendementDao" class="cm.mycompany.sysop.DAo.Implement.RendementDaoImpl"/>
+    <bean id="ISuggestionDao" class="cm.mycompany.sysop.DAo.Implement.SuggestionDaoImpl"/>
+    <bean id="ITacheDao" class="cm.mycompany.sysop.DAo.Implement.TacheDaoImpl"/>  
     
 <!-- la couche servcie-->
-    <bean id="ICLasseOuvrierService" class="cm.mycompany.sysop.ServiceImplement.ClasseOuvrierServiceImpl">
+    <bean id="ICLasseOuvrierService" class="cm.mycompany.sysop.Service.Implement.ClasseOuvrierServiceImpl">
         <property name="classeOuvrierDao" ref="IClasseOuvrierDao"/>
     </bean>
     
-    <bean id="IEntrepriseService" class="cm.mycompany.sysop.ServiceImplement.EntrepriseServiceImpl">
+    <bean id="IEntrepriseService" class="cm.mycompany.sysop.Service.Implement.EntrepriseServiceImpl">
         <property name="entrepriseDao" ref="IEntrepriseDao"/>
     </bean>
-    <bean id="IEvaluationService" class="cm.mycompany.sysop.ServiceImplement.EvaluationServiceImpl">
+    <bean id="IEvaluationService" class="cm.mycompany.sysop.Service.Implement.EvaluationServiceImpl">
         <property name="iEvaluationDao" ref="IEvaluationDao"/>
     </bean>
-    <bean id="IIdealisteService" class="cm.mycompany.sysop.ServiceImplement.IdealisteServiceImpl">
+    <bean id="IIdealisteService" class="cm.mycompany.sysop.Service.Implement.IdealisteServiceImpl">
         <property name="iIdealisteDao" ref="IIdealisteDao"/>
     </bean>
-    <bean id="IOuvrierService" class="cm.mycompany.sysop.ServiceImplement.OuvrierServiceImpl">
+    <bean id="IOuvrierService" class="cm.mycompany.sysop.Service.Implement.OuvrierServiceImpl">
         <property name="iOuvrierDao" ref="IOuvrierDao"/>
     </bean>
-    <bean id="ISuggestionService" class="cm.mycompany.sysop.ServiceImplement.SuggestionServiceImpl">
+    <bean id="ISuggestionService" class="cm.mycompany.sysop.Service.Implement.SuggestionServiceImpl">
         <property name="iSuggestionDao" ref="ISuggestionDao"/>
     </bean>
-    <bean id="ITacheService" class="cm.mycompany.sysop.ServiceImplement.TacheServiceImpl">
+    <bean id="ITacheService" class="cm.mycompany.sysop.Service.Implement.TacheServiceImpl">
         <property name="iTacheDao" ref="ITacheDao"/>
     </bean>
     

@@ -5,7 +5,7 @@
  */
 package cm.mycompany.sysop.ServiceTest;
 
-import cm.mycompany.sysop.ServiceInterface.IOuvrierService;
+import cm.mycompany.sysop.Service.Interface.IOuvrierService;
 import cm.mycompany.sysop.data.Ouvrier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

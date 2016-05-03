@@ -5,7 +5,7 @@
  */
 package cm.mycompany.sysop.Beans;
 
-import cm.mycompany.sysop.ServiceInterface.IEntrepriseService;
+import cm.mycompany.sysop.Service.Interface.IEntrepriseService;
 import cm.mycompany.sysop.data.Entreprise;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
