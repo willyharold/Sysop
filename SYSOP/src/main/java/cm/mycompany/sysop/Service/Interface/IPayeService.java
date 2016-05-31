@@ -17,8 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface IPayeService {
     public Paye createPaye(Paye paye) throws ServiceException;
+   
     public Paye updatePaye(Paye Paye) throws ServiceException;
+    
     public Paye findPayeById(Long id) throws ServiceException;
+    
     public List<Paye> findAllPaye() throws ServiceException;
+    
     public void deletePaye(Long id) throws ServiceException;
 }
+

@@ -18,8 +18,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ICLasseOuvrierService {
     public ClasseOuvrier createClasseOuvrier(ClasseOuvrier classeOuvrier) throws ServiceException;
+   
     public ClasseOuvrier updateClasseOuvrier(ClasseOuvrier classeOuvrier) throws ServiceException;
+    
     public ClasseOuvrier findClasseOuvrierById(Long id) throws ServiceException;
+    
     public List<ClasseOuvrier> findAllClasseOuvrier() throws ServiceException;
+    
     public void deleteClasseOuvrier(Long id) throws ServiceException;
 }

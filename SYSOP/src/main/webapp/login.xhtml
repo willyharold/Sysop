@@ -35,18 +35,21 @@
                 <div class="Container80 Fnone MarAuto FontBold"><i class="icon-key-1"></i> Permissions</div>
             </div>
             
+           
             <div class="Container90 Fnone MarAuto TexAlCenter TabContent" id="TAB1">
+                <h:form>
                 <div class="EmptyBox50"></div>
-                <p:inputText value="" placeholder="Username" styleClass="Container80 Fnone MarAuto Fs18"/>
+                <p:inputText value="#{connexionBean.username}" placeholder="Username" styleClass="Container80 Fnone MarAuto Fs18" required="true" requiredMessage="le nom d'utilisateur est obligatoire"/>
                 <div class="EmptyBox10"></div>
-                <p:password value="" placeholder="Password" styleClass="Container80 Fnone MarAuto Fs18" feedback="false"/>
+                <p:password value="#{connexionBean.password}" placeholder="Password" styleClass="Container80 Fnone MarAuto Fs18" feedback="false" required="true" requiredMessage="le mot de passe est obligatoire"/>
                 <div class="EmptyBox20"></div>
                 <div class="Container85 Fnone MarAuto softgray">
                     <p:selectBooleanCheckbox value="accept" styleClass="Fleft" itemLabel="I Accept Terms And Policies"/>
                 </div>
                 <div class="EmptyBox30"></div>
-                <p:button  value="Log In" styleClass="Fs16" href="dashboard.xhtml"></p:button>
+                <p:commandButton value="Log in" action="#{connexionBean.connexion()}"/>
                 <div class="EmptyBox50"></div>
+                </h:form>
             </div>
             
             <div class="Container90 Fnone MarAuto DispNone TexAlCenter TabContent" id="TAB2">

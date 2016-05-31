@@ -17,7 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ISuggestionService {
     public Suggestion createSuggestion(Suggestion suggestion) throws ServiceException;
+    
+    public void deleteSuggestion(Long id) throws ServiceException;
+    
     public Suggestion updateSuggestion(Suggestion suggestion) throws ServiceException;
+    
     public Suggestion findSuggestionById(Long id) throws ServiceException;
+    
     public List<Suggestion> findAllSuggestion() throws ServiceException;
 }

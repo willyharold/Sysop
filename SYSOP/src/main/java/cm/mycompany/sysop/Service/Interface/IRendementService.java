@@ -17,10 +17,15 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface IRendementService {
+    
     public Rendement createRendement(Rendement rendement) throws ServiceException;
+    
     public Rendement updateRendement(Rendement rendement) throws ServiceException;
+    
     public Rendement findRendementById(Long id) throws ServiceException;
+    
     public List<Rendement> findAllRendement() throws ServiceException;
+    
     public void deleteRendement(Long id) throws ServiceException;
     
 }

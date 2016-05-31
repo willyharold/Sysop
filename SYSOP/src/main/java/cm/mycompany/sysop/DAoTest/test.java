@@ -29,20 +29,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class test {
     public static void main(String[] args) throws DataAccessException {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("Spring-Config.xml");
-//        IOuvrierService iOuvrierService = (IOuvrierService)ctx.getBean("IOuvrierService");
-//        Ouvrier ouvrier = new Ouvrier();
-//        ouvrier.setAge(12);
-//        ouvrier.setNom("Achilo");
-//        ouvrier.setPrenom("t");
-//        iOuvrierService.createOuvrier(ouvrier);
+        IOuvrierService iOuvrierService = (IOuvrierService)ctx.getBean("IOuvrierService");
+        Ouvrier ouvrier = new Ouvrier();
+        ouvrier.setAge(12);
+        ouvrier.setNom("thierry");
+        ouvrier.setPrenom("t");
+        iOuvrierService.createOuvrier(ouvrier);
 
-        IEntrepriseService entrepriseService = (IEntrepriseService)ctx.getBean("IEntrepriseService");
-//        Entreprise entreprise = new Entreprise();
-//        entreprise.setCode("1234");
-//        entreprise.setIntitule("REFERENCE");
-//        entrepriseService.createEntreprise(entreprise);
-        List<Entreprise> entreprises = new LinkedList<Entreprise>();
-        entreprises = entrepriseService.findAllEntreprise();
-        System.out.println(entreprises);
+//        IEntrepriseService entrepriseService = (IEntrepriseService)ctx.getBean("IEntrepriseService");
+////        Entreprise entreprise = new Entreprise();
+////        entreprise.setCode("1234");
+////        entreprise.setIntitule("REFERENCE");
+////        entrepriseService.createEntreprise(entreprise);
+//        List<Entreprise> entreprises = new LinkedList<Entreprise>();
+//        entreprises = entrepriseService.findAllEntreprise();
+//        System.out.println(entreprises);
     }
 }

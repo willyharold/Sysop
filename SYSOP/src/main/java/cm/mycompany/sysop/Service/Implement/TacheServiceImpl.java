@@ -71,5 +71,14 @@ public class TacheServiceImpl implements ITacheService{
             throw  new ServiceException("impossible de faire le findAll");
         }
     }
+
+    @Override
+    public void deleteTache(Long id) throws ServiceException {
+        try {
+            iTacheDao.delete(iTacheDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(TacheServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

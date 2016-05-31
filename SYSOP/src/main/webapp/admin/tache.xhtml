@@ -7,9 +7,45 @@
 
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
+        <div class="Container100">
+            <div class="ContainerIndent">
+                <p:panel>
+                    <span class="FontBold Fs18 hardblue Container100">Tache</span>
+                    <div class="Container100">
+                        <div class="ContainerIndent">
+                                <h:form>
+                                    <p:dataTable value="#{tacheBean.findAllTache()}" var="item" stickyHeader="true"  rows="10" paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" emptyMessage="vide" reflow="true">
+                                    <f:facet name="header">
+                                        Tache
+                                    </f:facet>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Id"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Evaluation"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.evaluation}"/>
+                                        </p:column>
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Entreprise"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.entreprise}"/>
+                                        </p:column>
+                                    </p:dataTable>
+                                </h:form>
 
-        <h3 class="hardblue TexAlCenter">Empty Page</h3>
-        <span class="TexAlCenter DispBlock Wid100">Use this page to start from scratch and place your custom content.</span>
+                        </div>
+                    </div>
+                </p:panel>
+                <div class="EmptyBox20"></div>
+            </div>
+        </div>   
+    
     </ui:define>
 
 </ui:composition>

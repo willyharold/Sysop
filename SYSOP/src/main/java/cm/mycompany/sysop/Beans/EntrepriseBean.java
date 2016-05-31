@@ -16,6 +16,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import org.hibernate.service.spi.ServiceException;
+import org.primefaces.model.SelectableDataModel;
 
 
 
@@ -25,13 +26,14 @@ import org.hibernate.service.spi.ServiceException;
  */
 @ManagedBean
 @RequestScoped
-public class EntrepriseBean {
+public class EntrepriseBean implements SelectableDataModel<Entreprise> {
     
     @ManagedProperty(value = "#{IEntrepriseService}")
     IEntrepriseService iEntrepriseService;
     
     
     private Entreprise entreprise = new Entreprise();
+    private Entreprise entreprisechoisi = new Entreprise();
     private List<Entreprise> entreprises = new LinkedList<Entreprise>();
 
     
@@ -42,8 +44,6 @@ public class EntrepriseBean {
         } catch (Exception e) {
             System.out.println(e);
         }
-
-        System.out.println(entreprises);
         return entreprises;
     }
 
@@ -55,11 +55,23 @@ public class EntrepriseBean {
     }
 
     public Entreprise getEntreprise() {
+        
+        System.out.println("hello " +entreprise);
         return entreprise;
     }
 
+    public Entreprise getEntreprisechoisi() {
+        return entreprisechoisi;
+    }
+
+    public void setEntreprisechoisi(Entreprise entreprisechoisi) {
+        this.entreprisechoisi = entreprisechoisi;
+    }
+
+
     public void setEntreprise(Entreprise entreprise) {
         this.entreprise = entreprise;
+        System.out.println(entreprise);
     }
 
     public IEntrepriseService getiEntrepriseService() {
@@ -75,7 +87,7 @@ public class EntrepriseBean {
       return iEntrepriseService.createEntreprise(entreprise);
     }
     public Entreprise updateEntreprise() throws ServiceException{
-      return iEntrepriseService.updateEntreprise(entreprise);
+      return iEntrepriseService.updateEntreprise(entreprisechoisi);
     }
     public Entreprise findEntrepriseById() throws ServiceException{
       return iEntrepriseService.findEntrepriseById(entreprise.getId());
@@ -83,6 +95,23 @@ public class EntrepriseBean {
     
     public void deleteEntreprise(Long id) throws ServiceException{
        iEntrepriseService.deleteEntreprise(entreprise.getId());
+    }
+
+    @Override
+    public Entreprise getRowData(String rowKey){
+
+        List<Entreprise> ag = getEntreprises();
+        for (Entreprise entre : ag) {
+            if (entre.getId().equals(rowKey)) {
+                return entre;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Object getRowKey(Entreprise ag) {
+        return ag.getId();
     }
     
 }

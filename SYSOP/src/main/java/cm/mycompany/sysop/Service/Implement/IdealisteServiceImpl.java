@@ -72,5 +72,15 @@ public class IdealisteServiceImpl implements IIdealisteService{
             throw  new ServiceException("impossible de faire le findAll");
         }
     }
+
+    @Override
+    public void deleteIdealiste(long id) throws ServiceException {
+        try {
+            iIdealisteDao.delete(iIdealisteDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(IdealisteServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }

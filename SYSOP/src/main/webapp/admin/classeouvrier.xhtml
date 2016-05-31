@@ -7,9 +7,45 @@
 
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
+        <div class="Container100">
+            <div class="ContainerIndent">
+                <p:panel>
+                    <span class="FontBold Fs18 hardblue Container100">Classe Ouvrière</span>
+                    <div class="Container100">
+                        <div class="ContainerIndent">
 
-        <h3 class="hardblue TexAlCenter">Empty Page</h3>
-        <span class="TexAlCenter DispBlock Wid100">Use this page to start from scratch and place your custom content.</span>
+                            <h:form>
+
+                                <p:dataTable id="singleDT" value="#{classeOuvrierBean.findAllClasseOuvrier()}" var="item" stickyHeader="true" rows="10" paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" emptyMessage="Il y'a pas de classe" reflow="true">
+                                    <f:facet name="header">
+                                        Classe Ouvrière
+                                    </f:facet><p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Paye"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.paye}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Rendement"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.rendement}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Id"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+
+                        </div>
+                    </div>
+                </p:panel>
+                <div class="EmptyBox20"></div>
+            </div>
+        </div>   
     </ui:define>
 
 </ui:composition>

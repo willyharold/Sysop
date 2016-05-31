@@ -5,7 +5,6 @@
  */
 package cm.mycompany.sysop.Service.Interface;
 
-import cm.mycompany.sysop.data.Evaluation;
 import cm.mycompany.sysop.data.Idealiste;
 import java.util.List;
 import org.hibernate.service.spi.ServiceException;
@@ -17,8 +16,15 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface IIdealisteService {
+    
     public Idealiste createIdealiste(Idealiste idealiste) throws ServiceException;
+    
+    public void deleteIdealiste(long id) throws ServiceException;
+  
     public Idealiste updateIdealiste(Idealiste idealiste) throws ServiceException;
+    
     public Idealiste findIdealisteById(Long id) throws ServiceException;
+    
     public List<Idealiste> findAllIdealiste() throws ServiceException;
+    
 }

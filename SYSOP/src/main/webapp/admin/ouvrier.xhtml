@@ -8,47 +8,60 @@
 
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
+        <div class="Container100">
+            <div class="ContainerIndent">
+                <p:panel>
+                    <span class="FontBold Fs18 hardblue Container100">Ouvrier</span>
+                    <div class="Container100">
+                        <div class="ContainerIndent">
+                            <h:form>
 
-        <f:view>
+                                <p:dataTable id="singleDT"  stickyHeader="true" value="#{ouvrierBean.findAllOuvrier()}" var="item" rows="10" paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" emptyMessage="Il y'a pas d'ouvrier" reflow="true">
+                                    <f:facet name="header">
+                                        Ouvrier
+                                    </f:facet>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Id"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Nom"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.nom}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Prenom"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.prenom}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Age"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.age}"/>
+                                    </p:column>
+                                    <f:facet name="footer">
+                                        <p:commandButton process="singleDT" value="Creer" />
+                                    </f:facet>
+                                    <f:facet name="footer">
+                                            <p:commandButton process="singleDT" value="Modifier" />
+                                    </f:facet>
+                                    <f:facet name="footer">
+                                            <p:commandButton process="singleDT" value="Supprimer"/>
+                                    </f:facet>
+                                </p:dataTable>
+                            </h:form>
 
-
-            <h:form>
-
-                <p:dataTable value="#{ouvrierBean.findAllOuvrier()}" var="item">
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Evaluation"/>
-                        </f:facet>
-                        <h:outputText value="#{item.evaluation}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="#{item.id}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Nom"/>
-                        </f:facet>
-                        <h:outputText value="#{item.nom}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Prenom"/>
-                        </f:facet>
-                        <h:outputText value="#{item.prenom}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Age"/>
-                        </f:facet>
-                        <h:outputText value="#{item.age}"/>
-                    </p:column>
-                </p:dataTable>
-            </h:form>
-        </f:view>
-
+                        </div>
+                    </div>
+                </p:panel>
+                <div class="EmptyBox20"></div>
+            </div>
+        </div>
     </ui:define>
 
 </ui:composition>

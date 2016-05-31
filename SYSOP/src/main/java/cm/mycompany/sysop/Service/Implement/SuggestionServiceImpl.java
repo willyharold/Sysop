@@ -71,5 +71,14 @@ public class SuggestionServiceImpl implements ISuggestionService{
             throw  new ServiceException("impossible de faire le findALL");
         }
     }
+
+    @Override
+    public void deleteSuggestion(Long id) throws ServiceException {
+        try {
+            iSuggestionDao.delete(iSuggestionDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(SuggestionServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

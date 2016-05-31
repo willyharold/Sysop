@@ -71,5 +71,14 @@ public class OuvrierServiceImpl implements IOuvrierService{
             throw  new ServiceException("impossible de faire le findAll");
         }
     }
+
+    @Override
+    public void deleteOuvrier(Long id) throws ServiceException {
+        try {
+            iOuvrierDao.delete(iOuvrierDao.findById(id));
+        } catch (DataAccessException ex) {
+            Logger.getLogger(OuvrierServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

@@ -18,7 +18,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ITacheService {
     public Tache createTache(Tache tache) throws ServiceException;
+    
+    public void deleteTache(Long id) throws ServiceException;
+    
     public Tache updateTache(Tache tache) throws ServiceException;
+    
     public Tache findTacheById(Long id) throws ServiceException;
+    
     public List<Tache> findAllTache() throws ServiceException;
 }

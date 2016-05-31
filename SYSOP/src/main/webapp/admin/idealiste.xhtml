@@ -8,8 +8,61 @@
     <ui:define name="content">
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
 
-        <h3 class="hardblue TexAlCenter">Empty Page</h3>
-        <span class="TexAlCenter DispBlock Wid100">Use this page to start from scratch and place your custom content.</span>
+        <div class="Container100">
+            <div class="ContainerIndent">
+                <p:panel>
+                    <span class="FontBold Fs18 hardblue Container100">Idealiste</span>
+                    <div class="Container100">
+                        <div class="ContainerIndent">
+
+                            <h:form>
+                                <p:dataTable id="singleDT" value="#{idealisteBean.findAllIdealiste()}" var="item"  stickyHeader="true"  rows="10" paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="5,10,15" emptyMessage="Il y'a pas d'idealiste" reflow="true">
+                                    <f:facet name="header">
+                                        Idealiste
+                                    </f:facet>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Id"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Nom"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.nom}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Prenom"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.prenom}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="Age"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.age}"/>
+                                    </p:column>
+                                    <f:facet name="footer">
+                                        <p:commandButton process="singleDT" value="Creer" />
+                                    </f:facet>
+                                    <f:facet name="footer">
+                                            <p:commandButton process="singleDT" value="Modifier" />
+                                    </f:facet>
+                                    <f:facet name="footer">
+                                            <p:commandButton process="singleDT" value="Supprimer"/>
+                                    </f:facet>
+                                </p:dataTable>
+                            </h:form>
+
+                        </div>
+                    </div>
+                </p:panel>
+                <div class="EmptyBox20"></div>
+            </div>
+        </div>
+
     </ui:define>
 
 </ui:composition>

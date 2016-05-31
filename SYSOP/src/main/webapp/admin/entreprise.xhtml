@@ -15,13 +15,13 @@
                         <div class="ContainerIndent">
                             <h:form id="form">
                                 <p:dataTable id="singleDT" value="#{entrepriseBean.entreprises}" var="item" rows="10" paginator="true" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                                                 rowsPerPageTemplate="5,10,15" emptyMessage="No cars found with given criteria" reflow="true">
+                                             rowsPerPageTemplate="5,10,15" emptyMessage="Il n'a pas d'entreprise" reflow="true" rowKey="#{item.id}" selection="#{entrepriseBean.entreprisechoisi}" selectionMode="single">
                                     <f:facet name="header">
-                                            Entreprise
-                                        </f:facet>
+                                        Entreprise
+                                    </f:facet>
                                     <p:column>
                                         <f:facet name="header">
-                                            <h:outputText value="Id"/>
+                                            <h:outputText value="id"/>
                                         </f:facet>
                                         <h:outputText value="#{item.id}"/>
                                     </p:column>
@@ -38,13 +38,10 @@
                                         <h:outputText value="#{item.intitule}"/>
                                     </p:column>
                                     <f:facet name="footer">
-                                            <p:commandButton process="singleDT" value="Voir"/>
+                                        <p:commandButton process="singleDT" value="Creer" onclick="PF('creer_dialog').show()" update=":update:updatepanel"/>
                                     </f:facet>
                                     <f:facet name="footer">
-                                            <p:commandButton process="singleDT" value="Creer"/>
-                                    </f:facet>
-                                    <f:facet name="footer">
-                                            <p:commandButton process="singleDT" value="Modifier"/>
+                                            <p:commandButton process="singleDT" value="Modifier" onclick="PF('modifier_dialog').show()" update=":form:singleDT"/>
                                     </f:facet>
                                     <f:facet name="footer">
                                             <p:commandButton process="singleDT" value="Supprimer"/>
@@ -57,6 +54,37 @@
                 <div class="EmptyBox20"></div>
             </div>
         </div>
+        <p:dialog id="creer_dialog" widgetVar="creer_dialog" resizable="false" header="Creer une entreprise" showEffect="explode" hideEffect="bounce" modal="true">
+        
+            <h:form>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Code:" for="code" />
+                    <p:inputText id="code" value="#{entrepriseBean.entreprise.code}" title="Code" />
+                    <p:outputLabel value="Intitule:" for="intitule" />
+                    <p:inputText id="intitule" value="#{entrepriseBean.entreprise.intitule}" title="Intitule" />
+                    <p:commandButton  value="Creer" action="#{entrepriseBean.createEntreprise()}" oncomplete="PF('creer_dialog').hide()" update=":form:singleDT" />
+                    <p:commandButton value="Annuler" onclick="PF('creer_dialog').hide()"/>
+                </p:panelGrid>
+                
+            </h:form>
+        
+        </p:dialog>
+        
+        <p:dialog id="modifier_dialog" widgetVar="modifier_dialog" resizable="false" header="modifier une entreprise" showEffect="explode" hideEffect="bounce" modal="true">
+            <h:form id="update">
+                <p:panelGrid columns="2" id="updatepanel">
+                    <p:outputLabel value="Code:" for="code" />
+                    <p:inputText id="code" value="#{entrepriseBean.entreprisechoisi.code}" title="Code" />
+                    <p:outputLabel value="Intitule:" for="intitule" />
+                    <p:inputText id="intitule" value="#{entrepriseBean.entreprisechoisi.intitule}" title="Intitule" />
+                    
+                    <p:commandButton  value="Modifier" action="#{entrepriseBean.updateEntreprise()}" oncomplete="PF('modifier_dialog').hide()" update=":form:singleDT" />
+                    <p:commandButton value="Annuler" onclick="PF('modifier_dialog').hide()"/>  
+                    <h:inputHidden id="id" value="#{entrepriseBean.entreprisechoisi.id}" />
+                </p:panelGrid>            
+            </h:form>
+        </p:dialog>
+      
     </ui:define>
 
 
